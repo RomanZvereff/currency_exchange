@@ -61,8 +61,6 @@ public class OrderDaoImpl implements Dao<Order> {
 
     @Override
     public List<Order> getAll() {
-        Calendar orderDate = Calendar.getInstance();
-        Calendar rateDate = Calendar.getInstance();
         List<Order> orderList = new ArrayList<>();
         ResultSet resultSet;
         String getExchangeRateQuery = "select  * from ORDERS;";
@@ -70,6 +68,8 @@ public class OrderDaoImpl implements Dao<Order> {
             PreparedStatement preparedStatement = connection.prepareStatement(getExchangeRateQuery)) {
             resultSet = preparedStatement.executeQuery();
             while(resultSet.next()) {
+                Calendar orderDate = Calendar.getInstance();
+                Calendar rateDate = Calendar.getInstance();
                 Order order = new Order();
                 order.setOrderId(resultSet.getInt("ORDER_ID"));
                 order.setOrderNumber(resultSet.getString("ORDER_NUM"));
@@ -82,7 +82,7 @@ public class OrderDaoImpl implements Dao<Order> {
                 orderDate.setTime(resultSet.getDate("ORDER_DT"));
                 order.setOrderDate(orderDate);
                 rateDate.setTime(resultSet.getDate("RATE_DT"));
-                order.setOrderDate(rateDate);
+                order.setRateDate(rateDate);
 
                 order.setCurrency(resultSet.getString("CCY"));
                 order.setBaseCurrency(resultSet.getString("BASE_CCY"));

@@ -31,7 +31,8 @@ public class UpdatePageServlet extends HttpServlet {
             }
         }else if(orderIdParam != null) {
             OrderDaoImpl orderDao = new OrderDaoImpl();
-            Optional<Order> optionalOrder = orderDao.get(Long.getLong(orderIdParam));
+            long id = Long.parseLong(orderIdParam);
+            Optional<Order> optionalOrder = orderDao.get(id);
             if(optionalOrder.isPresent()) {
                 Order order = optionalOrder.get();
                 request.setAttribute("order", order);

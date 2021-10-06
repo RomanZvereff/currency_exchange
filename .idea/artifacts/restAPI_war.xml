@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="restAPI:war">
+    <output-path>$PROJECT_DIR$/restAPI/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>false</exploded>
+        <module>restAPI</module>
+        <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
+      </options>
+    </properties>
+    <root id="archive" name="restAPI-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="restAPI:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -132,4 +132,21 @@ public class Order implements Serializable {
         return salt.toString();
     }
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId=" + orderId +
+                ", orderNumber='" + orderNumber + '\'' +
+                ", user=" + user +
+                ", orderDate=" + orderDate.getTime() +
+                ", rateDate=" + rateDate.getTime() +
+                ", currency='" + currency + '\'' +
+                ", baseCurrency='" + baseCurrency + '\'' +
+                ", orderOperation='" + orderOperation + '\'' +
+                ", exchangeRate=" + exchangeRate +
+                ", currencyAmount=" + currencyAmount +
+                ", baseCurrencyAmount=" + baseCurrencyAmount +
+                ", orderStatus='" + orderStatus + '\'' +
+                '}';
+    }
 }

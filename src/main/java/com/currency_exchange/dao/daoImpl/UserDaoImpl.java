@@ -2,12 +2,10 @@ package com.currency_exchange.dao.daoImpl;
 
 import com.currency_exchange.appConfig.DBManager;
 import com.currency_exchange.dao.Dao;
-import com.currency_exchange.entity.ExchangeRate;
 import com.currency_exchange.entity.User;
 import com.currency_exchange.entity.enums.UserRole;
 
 import java.sql.*;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.locks.Lock;
