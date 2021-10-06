@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+    <!-- https://tomcat.apache.org/tomcat-7.0-doc/jndi-datasource-examples-howto.html#MySQL_DBCP_1.x_Example -->
+    <Resource name="jdbc/myConnectionPool"
+    auth="Container"
+    type="javax.sql.DataSource"
+    username="root"
+    password="root"
+    driverClassName="com.mysql.cj.jdbc.Driver"
+    url="jdbc:mysql://localhost:3306/currency_exchange?autoReconnect=true"
+    validationQuery="select 1"
+    maxActive="100"
+    maxIdle="30"
+    maxWait="10000"/>
+
+</Context>
